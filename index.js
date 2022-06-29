@@ -316,8 +316,7 @@ function KUprayer(city) {
         }
     };
 }
-
-console.log('KUprayer loaded')
+ 
 
 var _default = KUprayer;
 exports.default = _default;
