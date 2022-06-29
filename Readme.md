@@ -18,7 +18,7 @@
  - zakhoo
 
 ## install
-```
+```bash
 npm i kurdistan-prayer-times
 or
 https://raw.githubusercontent.com/ahmadsoran/kurdistan-prayer-times-js/master/index.js
@@ -28,7 +28,7 @@ https://raw.githubusercontent.com/ahmadsoran/kurdistan-prayer-times-js/master/in
 
 pass a string of city name from above list  and call date function 
 ('Today' or 'Tomorrow' or 'ThisMonth') pass one of these strings 
-```
+```bash
 import KUprayer from 'kurdistan-prayer-times'
 
 const { res } = KUprayer('sulaymaniyah').date('Today')
@@ -51,7 +51,7 @@ TodayPrayer: {
 
 by default is 24 **pass a string or num ( 12 )** to format function 
 format function work only with today function
-```
+```bash
     const { res } = KUprayer('sulaymaniyah').format('12').date('Today')
     // note that format function should be before date function
     
@@ -73,7 +73,7 @@ format function work only with today function
 
 # All Days / Year
 
-```
+```bash
  const { res } = KUprayer('sulaymaniyah').allDays()   
     console.log(res)
     // result
