@@ -12,7 +12,6 @@ import shekhan from './data/shekhan.json' assert {type: 'json'};
 import tuzKhurma from './data/tuz_khurma.json' assert {type: 'json'};
 import zakhoo from './data/zakho.json' assert {type: 'json'};
 
-
 const Today = new Date(Date.now()).getDate()
 const Month = new Date(Date.now()).getMonth() + 1
 function tConvert(time) {

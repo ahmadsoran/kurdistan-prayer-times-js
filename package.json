@@ -1,6 +1,6 @@
 {
   "name": "kurdistan-prayer-times",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kurdistan Cities prayer time js",
   "main": "index.js",
   "type": "module",
@@ -25,10 +25,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahmadsoran/kurdistan-adhan-js.git"
+    "url": "git+https://github.com/ahmadsoran/kurdistan-prayer-times-js.git"
   },
   "bugs": {
-    "url": "https://github.com/ahmadsoran/kurdistan-adhan-js/issues"
+    "url": "https://github.com/ahmadsoran/kurdistan-prayer-times-js/issues"
   },
-  "homepage": "https://github.com/ahmadsoran/kurdistan-adhan-js#readme"
+  "homepage": "https://github.com/ahmadsoran/kurdistan-prayer-times-js#readme",
+  "dependencies": {
+    "kurdistan-prayer-times": "^1.0.2"
+  }
 }
