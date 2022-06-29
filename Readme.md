@@ -40,9 +40,7 @@
 ## install
 
 ```console
-
 npm i kurdistan-prayer-times
-
 ```
 
 ### how to use it
@@ -91,23 +89,23 @@ const { res } = KUprayer('sulaymaniyah').date('Today')
 console.log(res)
 // result
 
-TodayPrayer: {
-Fajr: '3:12',
-Sunrise: '4:45',
-Dhuhr: '12:06',
-Asr: '15:52',
-Maghrib: '19:21',
-Isha: '20:31'
-},
-nowPrayer: { Time: '', Name: '' },
-nextPrayer: { Time: '12:06', Name: 'Dhuhr' },
-city: 'sulaymaniyah'
+// TodayPrayer: {
+// Fajr: '3:12',
+// Sunrise: '4:45',
+// Dhuhr: '12:06',
+// Asr: '15:52',
+// Maghrib: '19:21',
+// Isha: '20:31'
+// },
+// nowPrayer: { Time: '', Name: '' },
+// nextPrayer: { Time: '12:06', Name: 'Dhuhr' },
+// city: 'sulaymaniyah'
 ```
 ## **Fotmat the Times**
 by default is 24 **pass a string or num ( 12 )** to format function
 format function work only with today function
 
-```bash
+```javascript
 const { res } = KUprayer('sulaymaniyah').format('12').date('Today')
 
 // note that format function  must be before date function
@@ -116,38 +114,38 @@ console.log(res)
 
 // result
 
-TodayPrayer: {
-Fajr: '3:12 AM',
-Sunrise: '4:45 AM',
-Dhuhr: '12:06 PM',
-Asr: '3:52 PM',
-Maghrib: '7:21 PM',
-Isha: '8:31 PM'
-},
-nowPrayer: { Time: '', Name: '' },
-nextPrayer: { Time: '3:12', Name: 'Fajr' },
-city: 'sulaymaniyah'
+// TodayPrayer: {
+// Fajr: '3:12 AM',
+// Sunrise: '4:45 AM',
+// Dhuhr: '12:06 PM',
+// Asr: '3:52 PM',
+// Maghrib: '7:21 PM',
+// Isha: '8:31 PM'
+// },
+// nowPrayer: { Time: '', Name: '' },
+// nextPrayer: { Time: '3:12', Name: 'Fajr' },
+// city: 'sulaymaniyah'
 ```
 # All Days / Month
-```bash
+```javascript
 
 const { res } = KUprayer('sulaymaniyah').allDays()
 
 console.log(res)
 
 // result
-{
-day: '9',
-id: 9,
-month: '1',
-time: [ '5:45', '7:06', '12:09', '14:48', '17:09', '18:19' ]
-},
-{
-day: '10',
-id: 10,
-month: '1',
-time: [ '5:45', '7:06', '12:10', '14:49', '17:10', '18:20' ]
-},
+// {
+// day: '9',
+// id: 9,
+// month: '1',
+// time: [ '5:45', '7:06', '12:09', '14:48', '17:09', '18:19' ]
+// },
+// {
+// day: '10',
+// id: 10,
+// month: '1',
+// time: [ '5:45', '7:06', '12:10', '14:49', '17:10', '18:20' ]
+// },
 ....
 
 ### give a star if it was useful
