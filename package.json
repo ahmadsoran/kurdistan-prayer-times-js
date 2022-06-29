@@ -11,17 +11,15 @@
     "kurd",
     "kurdistan",
     "pray",
-    "js",
     "kurdistan",
-    "prayer",
-    "times",
+    "kurdistan prayer times",
     "kurdistan-prayer-js",
     "kurdistan-prayer-times",
     "kurdistan-prayer-time",
     "kurdistan-prayer-time-js"
   ],
-  "author": "ahmedsoran",
-  "license": "ISC",
+  "author": "ahmedsoran <ahmadsorann@gmail.com> (https://ahmadsoran.com)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahmadsoran/kurdistan-prayer-times-js.git"
