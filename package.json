@@ -1,5 +1,5 @@
 {
-  "name": "kurdistan-prayer-js",
+  "name": "@ahmadsoran/kurdistan-prayer",
   "version": "1.0.0",
   "description": "Kurdistan Cities prayer time js",
   "main": "index.js",
@@ -22,5 +22,13 @@
     "kurdistan-prayer-time-js"
   ],
   "author": "ahmedsoran",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadsoran/kurdistan-adhan-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmadsoran/kurdistan-adhan-js/issues"
+  },
+  "homepage": "https://github.com/ahmadsoran/kurdistan-adhan-js#readme"
 }
