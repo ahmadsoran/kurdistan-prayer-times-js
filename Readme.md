@@ -23,16 +23,24 @@ npm i kurdistan-prayer-times
 ```
 ### how to use it
 ### 
-
+```bash
+import KUprayer /// <- what ever you want to call it from 'kurdistan-prayer-times' 
+```
+**OR** import from cdn
+```bash
+import KUprayer from 'https://cdn.jsdelivr.net/npm/kurdistan-prayer-times@1.0.7/index.es.js'
+```
 pass a string of city name from above list  and call date function 
 ('Today' or 'Tomorrow' or 'ThisMonth') pass one of these strings 
 ```bash
 import KUprayer from 'kurdistan-prayer-times'
-
+    
 const { res } = KUprayer('sulaymaniyah').date('Today')
 
 console.log(res)
+
 // result
+
 TodayPrayer: {
     Fajr: '3:12',
     Sunrise: '4:45',
@@ -69,7 +77,7 @@ format function work only with today function
 
 ``` 
 
-# All Days / Year
+# All Days / Month
 
 ```bash
  const { res } = KUprayer('sulaymaniyah').allDays()   
@@ -87,4 +95,5 @@ format function work only with today function
     month: '1',
     time: [ '5:45', '7:06', '12:10', '14:49', '17:10', '18:20' ]
   },
+  ....
 ```
