@@ -20,8 +20,6 @@
 ## install
 ```bash
 npm i kurdistan-prayer-times
-or
-https://raw.githubusercontent.com/ahmadsoran/kurdistan-prayer-times-js/master/index.js
 ```
 ### how to use it
 ### 
