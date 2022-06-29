@@ -137,20 +137,20 @@ export default function KUprayer(city) {
                 if (day.day == Today.toString() && day.month == Month.toString()) {
                     if (Hour >= parseInt(day.time[0].split(':').shift()) && Hour <= parseInt(day.time[1].split(':').shift())) {
                         nowPrayer = {
-                            Time: day.time[0],
+                            Time: tConvert(day.time[0]),
                             Name: 'Fajr'
                         }
                         nextPrayer = {
-                            Time: day.time[1],
+                            Time: tConvert(day.time[1]),
                             Name: 'Sunrise'
                         }
                     } else if (Hour >= parseInt(day.time[1].split(':').shift()) && Hour <= parseInt(day.time[1].split(':').shift()) + 1) {
                         nowPrayer = {
-                            Time: day.time[1],
+                            Time: tConvert(day.time[1]),
                             Name: 'Sunrise'
                         }
                         nextPrayer = {
-                            Time: day.time[2],
+                            Time: tConvert(day.time[2]),
                             Name: 'Dhuhr'
                         }
 
@@ -162,49 +162,49 @@ export default function KUprayer(city) {
 
                         }
                         nextPrayer = {
-                            Time: day.time[2],
+                            Time: tConvert(day.time[2]),
                             Name: 'Dhuhr'
                         }
                     }
                     else if (Hour >= parseInt(day.time[2].split(':').shift()) && Hour <= parseInt(day.time[3].split(':').shift())) {
                         nowPrayer = {
-                            Time: day.time[2],
+                            Time: tConvert(day.time[2]),
                             Name: 'Dhuhr'
 
                         }
                         nextPrayer = {
-                            Time: day.time[3],
+                            Time: tConvert(day.time[3]),
                             Name: 'Asr'
                         }
                     }
                     else if (Hour >= parseInt(day.time[3].split(':').shift()) && Hour <= parseInt(day.time[4].split(':').shift())) {
                         nowPrayer = {
-                            Time: day.time[3],
+                            Time: tConvert(day.time[3]),
                             Name: 'Asr'
                         }
                         nextPrayer = {
-                            Time: day.time[4],
+                            Time: tConvert(day.time[4]),
                             Name: 'Maghrib'
                         }
                     }
                     else if (Hour >= parseInt(day.time[4].split(':').shift()) && Hour <= parseInt(day.time[5].split(':').shift())) {
                         nowPrayer = {
-                            Time: day.time[4],
+                            Time: tConvert(day.time[4]),
                             Name: 'Maghrib'
                         }
                         nextPrayer = {
-                            Time: day.time[5],
+                            Time: tConvert(day.time[5]),
                             Name: 'Isha'
                         }
 
                     }
                     else if (Hour >= parseInt(day.time[5].split(':').shift()) && Hour <= 23) {
                         nowPrayer = {
-                            Time: day.time[5],
+                            Time: tConvert(day.time[5]),
                             Name: 'Isha'
                         }
                         nextPrayer = {
-                            Time: day.time[0],
+                            Time: tConvert(day.time[0]),
                             Name: 'Fajr'
                         }
                     } else if (Hour >= 0 && Hour <= parseInt(day.time[0].split(':').shift())) {
@@ -213,7 +213,7 @@ export default function KUprayer(city) {
                             Name: ''
                         }
                         nextPrayer = {
-                            Time: day.time[0],
+                            Time: tConvert(day.time[0]),
                             Name: 'Fajr'
                         }
                     } else {
@@ -307,3 +307,4 @@ export default function KUprayer(city) {
 
     }
 }
+
