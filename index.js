@@ -1,16 +1,16 @@
-import suly from './Prayer-times-in-Kurdistan-cities-JSON-2022/sulaymaniyah.json' assert {type: 'json'};
-import erbil from './Prayer-times-in-Kurdistan-cities-JSON-2022/erbil.json' assert {type: 'json'};
-import kirkuk from './Prayer-times-in-Kurdistan-cities-JSON-2022/kirkuk.json' assert {type: 'json'};
-import taqtaq from './Prayer-times-in-Kurdistan-cities-JSON-2022/taqtaq.json' assert {type: 'json'};
-import akre from './Prayer-times-in-Kurdistan-cities-JSON-2022/akre.json' assert {type: 'json'};
-import duhok from './Prayer-times-in-Kurdistan-cities-JSON-2022/duhok.json' assert {type: 'json'};
-import halabja from './Prayer-times-in-Kurdistan-cities-JSON-2022/halabja.json' assert {type: 'json'};
-import jalawla from './Prayer-times-in-Kurdistan-cities-JSON-2022/jalawla.json' assert {type: 'json'};
-import khanaqin from './Prayer-times-in-Kurdistan-cities-JSON-2022/khanaqin.json' assert {type: 'json'};
-import qaraHanjir from './Prayer-times-in-Kurdistan-cities-JSON-2022/qara_hanjir.json' assert {type: 'json'};
-import shekhan from './Prayer-times-in-Kurdistan-cities-JSON-2022/shekhan.json' assert {type: 'json'};
-import tuzKhurma from './Prayer-times-in-Kurdistan-cities-JSON-2022/tuz_khurma.json' assert {type: 'json'};
-import zakhoo from './Prayer-times-in-Kurdistan-cities-JSON-2022/zakho.json' assert {type: 'json'};
+import suly from './data/sulaymaniyah.json' assert {type: 'json'};
+import erbil from './data/erbil.json' assert {type: 'json'};
+import kirkuk from './data/kirkuk.json' assert {type: 'json'};
+import taqtaq from './data/taqtaq.json' assert {type: 'json'};
+import akre from './data/akre.json' assert {type: 'json'};
+import duhok from './data/duhok.json' assert {type: 'json'};
+import halabja from './data/halabja.json' assert {type: 'json'};
+import jalawla from './data/jalawla.json' assert {type: 'json'};
+import khanaqin from './data/khanaqin.json' assert {type: 'json'};
+import qaraHanjir from './data/qara_hanjir.json' assert {type: 'json'};
+import shekhan from './data/shekhan.json' assert {type: 'json'};
+import tuzKhurma from './data/tuz_khurma.json' assert {type: 'json'};
+import zakhoo from './data/zakho.json' assert {type: 'json'};
 
 
 const Today = new Date(Date.now()).getDate()
