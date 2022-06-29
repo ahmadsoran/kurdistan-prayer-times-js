@@ -110,7 +110,7 @@ format function work only with today function
 ```bash
 const { res } = KUprayer('sulaymaniyah').format('12').date('Today')
 
-// note that format function  should be before date function
+// note that format function  must be before date function
 
 console.log(res)
 
