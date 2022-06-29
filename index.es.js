@@ -1,16 +1,16 @@
-import suly from './data/sulaymaniyah.json'
-import erbil from './data/erbil.json'
-import kirkuk from './data/kirkuk.json'
-import taqtaq from './data/taqtaq.json'
-import akre from './data/akre.json'
-import duhok from './data/duhok.json'
-import halabja from './data/halabja.json'
-import jalawla from './data/jalawla.json'
-import khanaqin from './data/khanaqin.json'
-import qaraHanjir from './data/qara_hanjir.json'
-import shekhan from './data/shekhan.json'
-import tuzKhurma from './data/tuz_khurma.json'
-import zakhoo from './data/zakho.json'
+import suly from './data/sulaymaniyah.json'  assert {type: 'json'}
+import erbil from './data/erbil.json' assert {type: 'json'}
+import kirkuk from './data/kirkuk.json' assert {type: 'json'}
+import taqtaq from './data/taqtaq.json' assert {type: 'json'}
+import akre from './data/akre.json' assert {type: 'json'}
+import duhok from './data/duhok.json' assert {type: 'json'}
+import halabja from './data/halabja.json' assert {type: 'json'}
+import jalawla from './data/jalawla.json' assert {type: 'json'}
+import khanaqin from './data/khanaqin.json' assert {type: 'json'}
+import qaraHanjir from './data/qara_hanjir.json' assert {type: 'json'}
+import shekhan from './data/shekhan.json' assert {type: 'json'}
+import tuzKhurma from './data/tuz_khurma.json' assert {type: 'json'}
+import zakhoo from './data/zakho.json' assert {type: 'json'}
 
 const Today = new Date(Date.now()).getDate()
 const Month = new Date(Date.now()).getMonth() + 1
