@@ -1,132 +1,117 @@
-'use strict';
+import suly from './data/sulaymaniyah.json'
+import erbil from './data/erbil.json'
+import kirkuk from './data/kirkuk.json'
+import taqtaq from './data/taqtaq.json'
+import akre from './data/akre.json'
+import duhok from './data/duhok.json'
+import halabja from './data/halabja.json'
+import jalawla from './data/jalawla.json'
+import khanaqin from './data/khanaqin.json'
+import qaraHanjir from './data/qara_hanjir.json'
+import shekhan from './data/shekhan.json'
+import tuzKhurma from './data/tuz_khurma.json'
+import zakhoo from './data/zakho.json'
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-
-var _sulaymaniyah = _interopRequireDefault(require("./data/sulaymaniyah.json"));
-
-var _erbil = _interopRequireDefault(require("./data/erbil.json"));
-
-var _kirkuk = _interopRequireDefault(require("./data/kirkuk.json"));
-
-var _taqtaq = _interopRequireDefault(require("./data/taqtaq.json"));
-
-var _akre = _interopRequireDefault(require("./data/akre.json"));
-
-var _duhok = _interopRequireDefault(require("./data/duhok.json"));
-
-var _halabja = _interopRequireDefault(require("./data/halabja.json"));
-
-var _jalawla = _interopRequireDefault(require("./data/jalawla.json"));
-
-var _khanaqin = _interopRequireDefault(require("./data/khanaqin.json"));
-
-var _qara_hanjir = _interopRequireDefault(require("./data/qara_hanjir.json"));
-
-var _shekhan = _interopRequireDefault(require("./data/shekhan.json"));
-
-var _tuz_khurma = _interopRequireDefault(require("./data/tuz_khurma.json"));
-
-var _zakho = _interopRequireDefault(require("./data/zakho.json"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const Today = new Date(Date.now()).getDate();
-const Month = new Date(Date.now()).getMonth() + 1;
-
+const Today = new Date(Date.now()).getDate()
+const Month = new Date(Date.now()).getMonth() + 1
 function tConvert(time) {
     // Check correct time format and split into components
     time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time + ' AM'];
 
-    if (time.length > 1) {
-        // If time format correct
-        time = time.slice(1); // Remove full string match value
-
+    if (time.length > 1) { // If time format correct
+        time = time.slice(1);  // Remove full string match value
         time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
-
         time[0] = +time[0] % 12 || 12; // Adjust hours
     }
-
     return time.join(''); // return adjusted time or original string
 }
-
-function KUprayer(city) {
+export default function KUprayer(city) {
     // set array of prayer times for each city to the parameter if parameter is em then throw error 
     if (typeof city !== 'string') {
-        throw new Error('City must be a string');
+        throw new Error('City must be a string')
     }
 
     if (city == 'sulaymaniyah') {
         city = {
             city: 'sulaymaniyah',
-            prayerTimes: _sulaymaniyah.default
+            prayerTimes: suly
         };
     } else if (city == 'erbil') {
         city = {
             city: 'erbil',
-            prayerTimes: _erbil.default
+            prayerTimes: erbil
         };
-    } else if (city == 'kirkuk') {
+    }
+    else if (city == 'kirkuk') {
         city = {
             city: 'kirkuk',
-            prayerTimes: _kirkuk.default
+            prayerTimes: kirkuk
         };
-    } else if (city == 'taqtaq') {
+    }
+    else if (city == 'taqtaq') {
         city = {
             city: 'taqtaq',
-            prayerTimes: _taqtaq.default
+            prayerTimes: taqtaq
         };
-    } else if (city == 'akre') {
+    }
+    else if (city == 'akre') {
         city = {
             city: 'akre',
-            prayerTimes: _akre.default
+            prayerTimes: akre
         };
-    } else if (city == 'duhok') {
+    }
+    else if (city == 'duhok') {
         city = {
             city: 'duhok',
-            prayerTimes: _duhok.default
+            prayerTimes: duhok
         };
-    } else if (city == 'halabja') {
+    }
+    else if (city == 'halabja') {
         city = {
             city: 'halabja',
-            prayerTimes: _halabja.default
+            prayerTimes: halabja
+
         };
-    } else if (city == 'jalawla') {
+    }
+    else if (city == 'jalawla') {
         city = {
             city: 'jalawla',
-            prayerTimes: _jalawla.default
+            prayerTimes: jalawla
         };
-    } else if (city == 'khanaqin') {
+    }
+    else if (city == 'khanaqin') {
         city = {
             city: 'khanaqin',
-            prayerTimes: _khanaqin.default
+            prayerTimes: khanaqin
         };
-    } else if (city == 'qaraHanjir') {
+    }
+    else if (city == 'qaraHanjir') {
         city = {
             city: 'qaraHanjir',
-            prayerTimes: _qara_hanjir.default
+            prayerTimes: qaraHanjir
         };
-    } else if (city == 'shekhan') {
+    }
+    else if (city == 'shekhan') {
         city = {
             city: 'shekhan',
-            prayerTimes: _shekhan.default
+            prayerTimes: shekhan
         };
-    } else if (city == 'tuzKhurma') {
+    }
+    else if (city == 'tuzKhurma') {
         city = {
             city: 'tuzKhurma',
-            prayerTimes: _tuz_khurma.default
+            prayerTimes: tuzKhurma
         };
-    } else if (city == 'zakhoo') {
+    }
+    else if (city == 'zakhoo') {
         city = {
             city: 'zakhoo',
-            prayerTimes: _zakho.default
+            prayerTimes: zakhoo
         };
-    } else {
+    }
+    else {
         throw new Error('City is not found');
     }
-
     let TodayPrayer = {
         Fajr: '',
         Sunrise: '',
@@ -135,110 +120,114 @@ function KUprayer(city) {
         Maghrib: '',
         Isha: ''
     };
-    let MonthPrayer = [];
+    let MonthPrayer = []
     let nowPrayer = {
         Time: '',
         Name: ''
     };
     let nextPrayer;
-    const Hour = new Date(Date.now()).getHours();
-    let Minute = new Date(Date.now()).getMinutes();
-    Minute = Minute.toString().length == 1 ? '0' + Minute : Minute; // add 0 to minute if it is single digit because the time format is HH:MM`
-
+    const Hour = new Date(Date.now()).getHours()
+    let Minute = new Date(Date.now()).getMinutes()
+    Minute = Minute.toString().length == 1 ? '0' + Minute : Minute // add 0 to minute if it is single digit because the time format is HH:MM`
     let forrmat;
-
-    function GetPrayer(date) {
-        var _city, _city$prayerTimes;
-
-        /// get prayer times by date 
-        (_city = city) === null || _city === void 0 ? void 0 : (_city$prayerTimes = _city.prayerTimes) === null || _city$prayerTimes === void 0 ? void 0 : _city$prayerTimes.map(day => {
-            /// map on array of prayer times
+    function GetPrayer(date) { /// get prayer times by date 
+        city?.prayerTimes?.map((day => { /// map on array of prayer times
             if (date == 'Today') {
+
                 if (day.day == Today.toString() && day.month == Month.toString()) {
                     if (Hour >= parseInt(day.time[0].split(':').shift()) && Hour <= parseInt(day.time[1].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[0],
                             Name: 'Fajr'
-                        };
+                        }
                         nextPrayer = {
                             Time: day.time[1],
                             Name: 'Sunrise'
-                        };
+                        }
                     } else if (Hour >= parseInt(day.time[1].split(':').shift()) && Hour <= parseInt(day.time[1].split(':').shift()) + 1) {
                         nowPrayer = {
                             Time: day.time[1],
                             Name: 'Sunrise'
-                        };
+                        }
                         nextPrayer = {
                             Time: day.time[2],
                             Name: 'Dhuhr'
-                        };
-                    } else if (Hour >= parseInt(day.time[1].split(':').shift()) + 1 && Hour <= parseInt(day.time[2].split(':').shift())) {
+                        }
+
+                    }
+                    else if (Hour >= parseInt(day.time[1].split(':').shift()) + 1 && Hour <= parseInt(day.time[2].split(':').shift())) {
                         nowPrayer = {
                             Time: '',
                             Name: ''
-                        };
+
+                        }
                         nextPrayer = {
                             Time: day.time[2],
                             Name: 'Dhuhr'
-                        };
-                    } else if (Hour >= parseInt(day.time[2].split(':').shift()) && Hour <= parseInt(day.time[3].split(':').shift())) {
+                        }
+                    }
+                    else if (Hour >= parseInt(day.time[2].split(':').shift()) && Hour <= parseInt(day.time[3].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[2],
                             Name: 'Dhuhr'
-                        };
+
+                        }
                         nextPrayer = {
                             Time: day.time[3],
                             Name: 'Asr'
-                        };
-                    } else if (Hour >= parseInt(day.time[3].split(':').shift()) && Hour <= parseInt(day.time[4].split(':').shift())) {
+                        }
+                    }
+                    else if (Hour >= parseInt(day.time[3].split(':').shift()) && Hour <= parseInt(day.time[4].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[3],
                             Name: 'Asr'
-                        };
+                        }
                         nextPrayer = {
                             Time: day.time[4],
                             Name: 'Maghrib'
-                        };
-                    } else if (Hour >= parseInt(day.time[4].split(':').shift()) && Hour <= parseInt(day.time[5].split(':').shift())) {
+                        }
+                    }
+                    else if (Hour >= parseInt(day.time[4].split(':').shift()) && Hour <= parseInt(day.time[5].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[4],
                             Name: 'Maghrib'
-                        };
+                        }
                         nextPrayer = {
                             Time: day.time[5],
                             Name: 'Isha'
-                        };
-                    } else if (Hour >= parseInt(day.time[5].split(':').shift()) && Hour <= 23) {
+                        }
+
+                    }
+                    else if (Hour >= parseInt(day.time[5].split(':').shift()) && Hour <= 23) {
                         nowPrayer = {
                             Time: day.time[5],
                             Name: 'Isha'
-                        };
+                        }
                         nextPrayer = {
                             Time: day.time[0],
                             Name: 'Fajr'
-                        };
+                        }
                     } else if (Hour >= 0 && Hour <= parseInt(day.time[0].split(':').shift())) {
                         nowPrayer = {
                             Time: '',
                             Name: ''
-                        };
+                        }
                         nextPrayer = {
                             Time: day.time[0],
                             Name: 'Fajr'
-                        };
+                        }
                     } else {
                         nowPrayer = {
                             Time: '',
                             Name: ''
-                        };
+                        }
                         nextPrayer = {
                             Time: '',
                             Name: ''
-                        };
+                        }
                     }
-
                     if (forrmat == '12') {
+
                         return TodayPrayer = {
                             Fajr: tConvert(day.time[0]),
                             Sunrise: tConvert(day.time[1]),
@@ -258,7 +247,8 @@ function KUprayer(city) {
                         };
                     }
                 }
-            } else if (date == 'Tomorrow') {
+            }
+            else if (date == 'Tomorrow') {
                 if (day.day === (Today + 1).toString() && day.month === Month.toString()) {
                     return TodayPrayer = {
                         Fajr: day.time[0],
@@ -269,55 +259,51 @@ function KUprayer(city) {
                         Isha: day.time[5]
                     };
                 }
-            } else if (date == 'ThisMonth') {
+            }
+            else if (date == 'ThisMonth') {
                 if (day.month === Month.toString()) {
                     return MonthPrayer.push(day);
                 }
             }
-        });
+
+
+
+        }))
+
     }
 
-    console.log('KUprayer loaded');
     return {
         res: {},
         allDays: function () {
-            var _city2;
-
-            this.res = (_city2 = city) === null || _city2 === void 0 ? void 0 : _city2.prayerTimes;
-            return this;
+            this.res = city?.prayerTimes
+            return this
         },
         format: function (format) {
             forrmat = format;
-            console.log(forrmat);
+            console.log(forrmat)
             return this;
         },
         date: function (date) {
-            GetPrayer(date);
-
+            GetPrayer(date)
             if (date == 'Today') {
-                this.res = {
-                    TodayPrayer,
-                    nowPrayer,
-                    nextPrayer,
-                    city: city.city
-                };
+                this.res = { TodayPrayer, nowPrayer, nextPrayer, city: city.city }
                 return this;
-            } else if (date == 'Tomorrow') {
-                this.res = TodayPrayer;
+            }
+            else if (date == 'Tomorrow') {
+                this.res = TodayPrayer
                 return this;
-            } else if (date == 'ThisMonth') {
-                this.res = MonthPrayer;
+            }
+            else if (date == 'ThisMonth') {
+                this.res = MonthPrayer
                 return this;
             } else if (date !== 'Today' && date !== 'Tomorrow' && date !== 'ThisMonth' && date !== 'NextMonth') {
                 throw new Error('Date should be Today, Tomorrow, ThisMonth or NextMonth');
-            } else {
+            }
+            else {
                 throw new Error('Invalid Date');
             }
-        }
-    };
+
+        },
+
+    }
 }
-
-console.log('KUprayer loaded')
-
-var _default = KUprayer;
-exports.default = _default;
