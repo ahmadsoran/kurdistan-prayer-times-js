@@ -39,7 +39,7 @@
 
 ## install
 
-```bash
+```console
 
 npm i kurdistan-prayer-times
 
@@ -49,7 +49,7 @@ npm i kurdistan-prayer-times
 
 ###
 
-```bash
+```javascript
 
 import KUprayer from 'kurdistan-prayer-times'
 
@@ -57,7 +57,7 @@ import KUprayer from 'kurdistan-prayer-times'
 
 **For Vanila Js** import from cdn to your js file
 
-```bash
+```javascript
 
 import KUprayer from 'https://cdn.jsdelivr.net/npm/kurdistan-prayer-times@1.0.7/index.es.js'
 
@@ -65,7 +65,7 @@ import KUprayer from 'https://cdn.jsdelivr.net/npm/kurdistan-prayer-times@1.0.7/
 
 or
 
-```bash
+```javascript
 
 import KUprayer from 'kurdistan-prayer-times/index.es.js'
 
@@ -75,7 +75,7 @@ if you recieve Failed to resolve module specifier error then
 
 select node_modules from your project folder
 
-```bash
+```javascript
 import KUprayer from "../../../node_modules/kurdistan-prayer-times/index.es.js";
 ```
 # Get The Prayer Data
@@ -83,7 +83,7 @@ pass a string of city name from above list and call date function
 
 ('Today' or 'Tomorrow' or 'ThisMonth') pass one of these strings
 
-```bash
+```javascript
 import KUprayer from 'kurdistan-prayer-times'
 
 const { res } = KUprayer('sulaymaniyah').date('Today')
