@@ -28,6 +28,9 @@ function tConvert(time) {
 }
 export default function KUprayer(city) {
     // set array of prayer times for each city to the parameter if parameter is em then throw error 
+    if (typeof city !== 'string') {
+        throw new Error('City must be a string')
+    }
 
     if (city == 'sulaymaniyah') {
         city = {
@@ -128,12 +131,12 @@ export default function KUprayer(city) {
     let Minute = new Date(Date.now()).getMinutes()
     Minute = Minute.toString().length == 1 ? '0' + Minute : Minute // add 0 to minute if it is single digit because the time format is HH:MM`
     let forrmat;
-    console.log(`${Hour}:${Minute}`)
     function GetPrayer(date) { /// get prayer times by date 
         city?.prayerTimes?.map((day => { /// map on array of prayer times
             if (date == 'Today') {
+
                 if (day.day == Today.toString() && day.month == Month.toString()) {
-                    if (`${Hour}:${Minute}` >= day.time[0] && `${Hour}:${Minute}` <= day.time[1]) {
+                    if (Hour >= parseInt(day.time[0].split(':').shift()) && Hour <= parseInt(day.time[1].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[0],
                             Name: 'Fajr'
@@ -142,7 +145,7 @@ export default function KUprayer(city) {
                             Time: day.time[1],
                             Name: 'Sunrise'
                         }
-                    } else if (`${Hour}:${Minute}` >= day.time[1] && `${Hour}:${Minute}` <= day.time[2]) {
+                    } else if (Hour >= parseInt(day.time[1].split(':').shift()) && Hour <= parseInt(day.time[1].split(':').shift()) + 1) {
                         nowPrayer = {
                             Time: day.time[1],
                             Name: 'Sunrise'
@@ -152,7 +155,19 @@ export default function KUprayer(city) {
                             Name: 'Dhuhr'
                         }
 
-                    } else if (`${Hour}:${Minute}` >= day.time[2] && `${Hour}:${Minute}` <= day.time[3]) {
+                    }
+                    else if (Hour >= parseInt(day.time[1].split(':').shift()) + 1 && Hour <= parseInt(day.time[2].split(':').shift())) {
+                        nowPrayer = {
+                            Time: '',
+                            Name: ''
+
+                        }
+                        nextPrayer = {
+                            Time: day.time[2],
+                            Name: 'Dhuhr'
+                        }
+                    }
+                    else if (Hour >= parseInt(day.time[2].split(':').shift()) && Hour <= parseInt(day.time[3].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[2],
                             Name: 'Dhuhr'
@@ -163,7 +178,7 @@ export default function KUprayer(city) {
                             Name: 'Asr'
                         }
                     }
-                    else if (`${Hour}:${Minute}` >= day.time[3] && `${Hour}:${Minute}` <= day.time[4]) {
+                    else if (Hour >= parseInt(day.time[3].split(':').shift()) && Hour <= parseInt(day.time[4].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[3],
                             Name: 'Asr'
@@ -173,7 +188,7 @@ export default function KUprayer(city) {
                             Name: 'Maghrib'
                         }
                     }
-                    else if (`${Hour}:${Minute}` >= day.time[4] && `${Hour}:${Minute}` <= day.time[5]) {
+                    else if (Hour >= parseInt(day.time[4].split(':').shift()) && Hour <= parseInt(day.time[5].split(':').shift())) {
                         nowPrayer = {
                             Time: day.time[4],
                             Name: 'Maghrib'
@@ -184,12 +199,16 @@ export default function KUprayer(city) {
                         }
 
                     }
-                    else if (`${Hour}:${Minute}` >= day.time[5] && `${Hour}:${Minute}` <= '23:59') {
+                    else if (Hour >= parseInt(day.time[5].split(':').shift()) && Hour <= 23) {
                         nowPrayer = {
                             Time: day.time[5],
                             Name: 'Isha'
                         }
-                    } else {
+                        nextPrayer = {
+                            Time: day.time[0],
+                            Name: 'Fajr'
+                        }
+                    } else if (Hour >= 0 && Hour <= parseInt(day.time[0].split(':').shift())) {
                         nowPrayer = {
                             Time: '',
                             Name: ''
@@ -197,6 +216,15 @@ export default function KUprayer(city) {
                         nextPrayer = {
                             Time: day.time[0],
                             Name: 'Fajr'
+                        }
+                    } else {
+                        nowPrayer = {
+                            Time: '',
+                            Name: ''
+                        }
+                        nextPrayer = {
+                            Time: '',
+                            Name: ''
                         }
                     }
                     if (forrmat == '12') {
@@ -238,18 +266,7 @@ export default function KUprayer(city) {
                     return MonthPrayer.push(day);
                 }
             }
-            else if (date == 'NextMonth') {
-                if (day.month === (Month + 1).toString()) {
-                    return TodayPrayer = {
-                        Fajr: day.time[0],
-                        Sunrise: day.time[1],
-                        Dhuhr: day.time[2],
-                        Asr: day.time[3],
-                        Maghrib: day.time[4],
-                        Isha: day.time[5]
-                    };
-                }
-            }
+
 
 
         }))
@@ -258,7 +275,10 @@ export default function KUprayer(city) {
 
     return {
         res: {},
-        allDays: city,
+        allDays: function () {
+            this.res = city?.prayerTimes
+            return this
+        },
         format: function (format) {
             forrmat = format;
             console.log(forrmat)
@@ -288,6 +308,9 @@ export default function KUprayer(city) {
 
     }
 }
+
+const { res } = KUprayer('sulaymaniyah').allDays();
+console.log(res)
 
 
 
